@@ -2,8 +2,12 @@
 
 **A modular pentesting framework that automates the recon-to-exploitation loop across full engagements.**
 
-StrafeKit unifies the repetitive, fragmented stages of a network penetration test into a cohesive, data-driven workflow. 
-Instead of juggling loose text files and disconnected terminal tabs, StrafeKit centralizes context so every tool benefits from the findings of the last.
+StrafeKit unifies the repetitive, fragmented stages of a network penetration test into a cohesive, data-driven workflow. Instead of juggling loose text files and disconnected terminal tabs, StrafeKit centralizes target context across the entire assessment lifecycle.
+- Dynamic Command Generation: Combines user-defined TOML templates with live target data (IPs, open ports, service names) to build pre-populated, ready-to-run enumeration commands.
+
+- Contextual Progress Checklists: Tracks completed enumeration steps per host and logs the security context (e.g., Unauth vs. Authenticated) under which each check was executed.
+
+
 
 ## Architecture & Data Flow
 Modules operate independently and hand off findings asynchronously through a central **SQL Datastore**. 
