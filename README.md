@@ -1,24 +1,4 @@
-# Strafekit(In Progress)
-**A modular pentesting framework that automates the recon-to-exploitation loop across full engagements.**
-StrafeKit unifies the repetitive, fragmented stages of a network penetration test into a cohesive. 
-Instead of juggling loose text files and disconnected tabs, StrafeKit centralizes context so every tool benefits from the findings of the last.
-
-# Architecture & Data Flow
-Modules operate independently and hand off findings asynchronously through a central SQL Datastore.
-NetworScanner: Enumerate Networks,host, and ports.
-WebRecon: 
-ServiceScanner: Finds misconfiguration and tags vulnerable versions
-BruteForce: Ability to target webpages and services
-Cracker: cracks passwords add to database for test, hashs can be saved with credentials 
-    or lone one of hashes. 
-LateralAccess: tries multiply user and password combinations and notifies which have succeded.
-
-
-Here is a revised, polished version of your `README.md` that incorporates your new web reconnaissance phases, fixes incomplete sentences, and integrates the architectural updates while maintaining a clear technical style.
-
----
-
-# StrafeKit
+# StrafeKit(In Progress)
 
 **A modular pentesting framework that automates the recon-to-exploitation loop across full engagements.**
 
