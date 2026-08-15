@@ -1,4 +1,4 @@
-# Strafekit
+# Strafekit(In Progress)
 **A modular pentesting framework that automates the recon-to-exploitation loop across full engagements.**
 StrafeKit unifies the repetitive, fragmented stages of a network penetration test into a cohesive. 
 Instead of juggling loose text files and disconnected tabs, StrafeKit centralizes context so every tool benefits from the findings of the last.
