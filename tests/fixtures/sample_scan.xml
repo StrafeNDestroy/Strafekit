@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<nmaprun scanner="nmap" args="nmap -sV -sC -O -oX out.xml 10.0.0.5 10.0.0.6 10.0.0.99" start="1700000000" version="7.94">
+  <!-- Host 1: UP, two open ports, one with full service+cpe, OS detected -->
+  <host>
+    <status state="up" reason="echo-reply" reason_ttl="64"/>
+    <address addr="10.0.0.5" addrtype="ipv4"/>
+    <address addr="00:0C:29:AB:CD:EF" addrtype="mac" vendor="VMware"/>
+    <hostnames>
+      <hostname name="target.local" type="PTR"/>
+    </hostnames>
+    <ports>
+      <extraports state="closed" count="998"/>
+      <port protocol="tcp" portid="22">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="ssh" product="OpenSSH" version="8.2p1" extrainfo="Ubuntu Linux; protocol 2.0" conf="10" method="probed">
+          <cpe>cpe:/a:openbsd:openssh:8.2p1</cpe>
+          <cpe>cpe:/o:linux:linux_kernel</cpe>
+        </service>
+        <script id="ssh-hostkey" output="2048 aa:bb:cc RSA"/>
+      </port>
+      <port protocol="tcp" portid="80">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="http" product="nginx" version="1.18.0" conf="10" method="probed">
+          <cpe>cpe:/a:igor_sysoev:nginx:1.18.0</cpe>
+        </service>
+      </port>
+    </ports>
+    <os>
+      <osmatch name="Linux 5.0 - 5.14" accuracy="95" line="62345">
+        <osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="95">
+          <cpe>cpe:/o:linux:linux_kernel:5</cpe>
+        </osclass>
+      </osmatch>
+      <osfingerprint fingerprint="OS:SCAN(V=7.94%E=4%D=11/14)"/>
+    </os>
+  </host>
+  <!-- Host 2: UP, one open port, NO service info (tests Optional/None handling) -->
+  <host>
+    <status state="up" reason="reset" reason_ttl="128"/>
+    <address addr="10.0.0.6" addrtype="ipv4"/>
+    <ports>
+      <port protocol="tcp" portid="443">
+        <state state="filtered" reason="no-response" reason_ttl="0"/>
+      </port>
+    </ports>
+  </host>
+  <!-- Host 3: DOWN, no ports, no os (tests empty tuples) -->
+  <host>
+    <status state="down" reason="no-response" reason_ttl="0"/>
+    <address addr="10.0.0.99" addrtype="ipv4"/>
+  </host>
+  <runstats>
+    <finished time="1700000100" elapsed="100.00" summary="3 hosts scanned"/>
+    <hosts up="2" down="1" total="3"/>
+  </runstats>
+</nmaprun>
