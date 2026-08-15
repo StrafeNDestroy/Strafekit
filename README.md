@@ -1,22 +1,23 @@
 # StrafeKit(In Progress)
 
 **A modular pentesting framework that automates the recon-to-exploitation loop across full engagements.**
+StrafeKit unifies the repetitive, fragmented stages of a network penetration test into a cohesive workflow. Instead of juggling loose text files and disconnected terminal tabs, StrafeKit centralizes target context across the entire assessment lifecycle.
 
-StrafeKit unifies the repetitive, fragmented stages of a network penetration test into a cohesive, data-driven workflow. Instead of juggling loose text files and disconnected terminal tabs, StrafeKit centralizes target context across the entire assessment lifecycle.
-- **Browser-Based Interface:** Manages engagements through an intuitive web UI—providing a centralized dashboard for orchestration, live status tracking, and target visualization.
-- **Dynamic Command Generation:** Combines user-defined TOML templates with live target data (IPs, open ports, service names) to build pre-populated, ready-to-run enumeration commands.
-- **Contextual Progress Checklists:** Tracks completed enumeration steps per host and logs the security context (e.g., Unauth vs. Authenticated) under which each check was executed.
+* **Browser-Based Interface:** Manages engagements through an intuitive web UI—providing a centralized dashboard for orchestration, live status tracking, and target visualization.
+* **Dynamic Command Generation:** Combines user-defined TOML templates with live target data (IPs, open ports, service names) to build pre-populated, ready-to-run enumeration commands.
+* **Contextual Progress Checklists:** Tracks completed enumeration steps per host and logs the security context (e.g., Unauth vs. Authenticated) under which each check was executed.
 
 
-
-## Architecture & Data Flow
-Modules operate independently and hand off findings asynchronously through a central **SQL Datastore**. 
-Tools do not call each other directly; instead, module outputs update state tables, which sequentially drive subsequent assessment phases.
-![StrafeKit Architecture](./assets/architecture.jpeg)
-
+## Architecture
+**Ports & Adapters Architecture:** Built on a clean hexagonal architecture, decoupling core framework logic from underlying pentesting tools. Adapters make it seamless to swap out, upgrade, or add new tools without breaking core engine workflows.
+ 
 ---
 
 ## Module Overview
+
+Modules operate independently and hand off findings asynchronously through a central **SQL Datastore**. 
+Tools do not call each other directly; instead, module outputs update state tables, which sequentially drive subsequent assessment phases.
+![StrafeKit Architecture](./assets/architecture.jpeg)
 
 | Module | Purpose |
 | :--- | :--- |
