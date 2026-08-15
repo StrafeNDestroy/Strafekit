@@ -11,7 +11,6 @@ StrafeKit unifies the repetitive, fragmented stages of a network penetration tes
 ## Architecture
 **Ports & Adapters Architecture:** Built on a clean hexagonal architecture, decoupling core framework logic from underlying pentesting tools. Adapters make it seamless to swap out, upgrade, or add new tools without breaking core engine workflows.
  
----
 
 ## Module Overview
 
